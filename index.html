@@ -41,7 +41,7 @@
             /* Ajustes para pantallas pequeñas */
             @media (max-width: 768px) {
             body {
-                font-size: 14px;
+                font-size: 12px;
                 margin: 10px;
             }
 
@@ -50,7 +50,90 @@
             }
 
             .contenedor {
-                width: 100%; /* Asegura que los elementos ocupen el ancho completo */
+                width: 80%; /* Asegura que los elementos ocupen el ancho completo */
+            }
+
+            body.container {
+            margin: 0.5rem;
+            }
+
+            /* Centrar logo y título */
+            #Encabezado {
+            text-align: center;
+            padding: 1rem 0;
+            }
+            #logoUp {
+            float: none !important;
+            display: block;
+            margin: 0 auto 0.5rem;
+            width: 60px;
+            }
+            #Encabezado h1 {
+            font-size: 1.5rem;
+            margin: 0.25rem 0;
+            font-weight: 700;
+            }
+
+            /* Ocultar texto introductorio extra */
+            #parrafo {
+            display: none;
+            }
+
+            /* Inputs, select y botón a ancho completo */
+            select.form-select,
+            input.form-control,
+            button#CALCULAR {
+            width: 100% !important;
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            }
+            button#CALCULAR {
+            padding: 0.5rem 1rem;
+            }
+
+            /* Bloque de precio total */
+            #Piedepagina {
+            background: var(--bs-primary);
+            color: #fff;
+            text-align: center;
+            padding: 0.75rem;
+            border-radius: 0.25rem;
+            }
+            #Piedepagina h2 {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            }
+
+            /* Tabla “Mis cortes” más compacta */
+            #misCortes {
+            margin-top: 1rem;
+            }
+            #misCortes h3 {
+            font-size: 1.25rem;
+            }
+            table.table {
+            font-size: 0.75rem;
+            }
+            .table thead th {
+            padding: 0.5rem;
+            }
+            .table tbody td {
+            padding: 0.4rem;
+            }
+
+            /* Botones de acción en fila y centrados */
+            .botones {
+                display: flex;
+                justify-content: space-around;
+                margin: 0.75rem 0;
+            }
+
+            /* Quitar anchos fijos de contenedores */
+            #uno, #dos {
+                width: 100% !important;
+                margin: 0 auto;
+                padding: 0;
             }
             }
 
@@ -213,93 +296,7 @@
 
             
         }
-        /* ==========================
-        Adaptaciones para móvil
-        ========================== */
-        @media (max-width: 576px) {
-            body.container {
-            margin: 0.5rem;
-            }
-
-            /* Centrar logo y título */
-            #Encabezado {
-            text-align: center;
-            padding: 1rem 0;
-            }
-            #logoUp {
-            float: none !important;
-            display: block;
-            margin: 0 auto 0.5rem;
-            width: 60px;
-            }
-            #Encabezado h1 {
-            font-size: 1.5rem;
-            margin: 0.25rem 0;
-            font-weight: 700;
-            }
-
-            /* Ocultar texto introductorio extra */
-            #parrafo {
-            display: none;
-            }
-
-            /* Inputs, select y botón a ancho completo */
-            select.form-select,
-            input.form-control,
-            button#CALCULAR {
-            width: 100% !important;
-            font-size: 1rem;
-            margin-bottom: 0.75rem;
-            }
-            button#CALCULAR {
-            padding: 0.5rem 1rem;
-            }
-
-            /* Bloque de precio total */
-            #Piedepagina {
-            background: var(--bs-primary);
-            color: #fff;
-            text-align: center;
-            padding: 0.75rem;
-            border-radius: 0.25rem;
-            }
-            #Piedepagina h2 {
-            margin: 0;
-            font-size: 1rem;
-            font-weight: 500;
-            }
-
-            /* Tabla “Mis cortes” más compacta */
-            #misCortes {
-            margin-top: 1rem;
-            }
-            #misCortes h3 {
-            font-size: 1.25rem;
-            }
-            table.table {
-            font-size: 0.75rem;
-            }
-            .table thead th {
-            padding: 0.5rem;
-            }
-            .table tbody td {
-            padding: 0.4rem;
-            }
-
-            /* Botones de acción en fila y centrados */
-            .botones {
-                display: flex;
-                justify-content: space-around;
-                margin: 0.75rem 0;
-            }
-
-            /* Quitar anchos fijos de contenedores */
-            #uno, #dos {
-                width: 100% !important;
-                margin: 0 auto;
-                padding: 0;
-            }
-        }        
+        
 
 
     </style>
@@ -320,7 +317,7 @@ $(function () {
         
         <img id="logoUp" src="https://rematesmdq.com/surmaderas/img/logo-linea-gris.png">
         
-        <n><h1 style="color: grey; padding: 3px  ; font-family: 'Hind', sans-serif;">Cotizador de cortes</h1> </n>
+        <n><h1 style="padding: 3px  ; font-family: 'Hind', sans-serif;">Cotizador de cortes</h1> </n>
         
     </div>
     
