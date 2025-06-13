@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Costo de Corte de Madera</title>
     <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     
     <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;700&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="/css/style.css">
     
     <!-- links para exportar a PDF -->
     <!-- <script src="jspdf.debug.js"></script> -->
@@ -26,288 +28,8 @@
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     
 
-    <style>
-
-        /* Estilos generales para pantallas grandes */
-            body {
-            
-            font-family: 'Hind', sans-serif;
-            
-            font-size: 16px;
-            margin: 20px;
-            
-            }
-
-            /* Ajustes para pantallas pequeñas */
-            @media (max-width: 768px) {
-            body {
-                font-size: 12px;
-                margin: 10px;
-            }
-
-            .menu {
-                display: none; /* Ocultar el menú en dispositivos móviles */
-            }
-
-            .contenedor {
-                width: 80%; /* Asegura que los elementos ocupen el ancho completo */
-            }
-
-            body.container {
-            margin: 0.5rem;
-            }
-
-            /* Centrar logo y título */
-            #Encabezado {
-            text-align: center;
-            padding: 1rem 0;
-            }
-            #logoUp {
-            float: none !important;
-            display: block;
-            margin: 0 auto 0.5rem;
-            width: 60px;
-            }
-            #Encabezado h1 {
-            font-size: 1.5rem;
-            margin: 0.25rem 0;
-            font-weight: 700;
-            }
-
-            /* Ocultar texto introductorio extra */
-            #parrafo {
-            display: none;
-            }
-
-            /* Inputs, select y botón a ancho completo */
-            select.form-select,
-            input.form-control,
-            button#CALCULAR {
-            width: 100% !important;
-            font-size: 1rem;
-            margin-bottom: 0.75rem;
-            }
-            button#CALCULAR {
-            padding: 0.5rem 1rem;
-            }
-
-            /* Bloque de precio total */
-            #Piedepagina {
-            background: var(--bs-primary);
-            color: #fff;
-            text-align: center;
-            padding: 0.75rem;
-            border-radius: 0.25rem;
-            }
-            #Piedepagina h2 {
-            margin: 0;
-            font-size: 1rem;
-            font-weight: 500;
-            }
-
-            /* Tabla “Mis cortes” más compacta */
-            #misCortes {
-            margin-top: 1rem;
-            }
-            #misCortes h3 {
-            font-size: 1.25rem;
-            }
-            table.table {
-            font-size: 0.75rem;
-            }
-            .table thead th {
-            padding: 0.5rem;
-            }
-            .table tbody td {
-            padding: 0.4rem;
-            }
-
-            /* Botones de acción en fila y centrados */
-            .botones {
-                display: flex;
-                justify-content: space-around;
-                margin: 0.75rem 0;
-            }
-
-            /* Quitar anchos fijos de contenedores */
-            #uno, #dos {
-                width: 100% !important;
-                margin: 0 auto;
-                padding: 0;
-            }
-            }
-
-            /*-------------------------------------------*/
-
-        #logo {
-            display: inline;
-            width: 80px;
-            float: right;
-            top: -10px;
-            position: relative;
-            
-            
-        }
-
-        #logo1 {
-            display: block;
-            width: 80px;
-            float: right;
-            position: relative;
-            
-            
-        }
-
-        #logoUp {
-            left: -27px;
-            display: inline;
-            width: 80px;
-            float: right;
-            top: -4px;
-            position: relative;
-        }
-
-        
-        h3 {
-            padding: 20px 7px ;
-            
-        }
-        #CALCULAR {
-            box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
-            cursor: pointer;
-            
-        }
-        
-        #uno {
-            border-radius: 4px;
-            width: 500px;
-        }
-
-        select {
-            cursor: pointer;
-        }
-        #dos{
-            
-            padding: 12px 20px;
-            border-radius: 4px;
-            width:500px;
-        }
-
-        #imagenMadera {
-            height: 300px;
-            width: auto;
-            padding: 12px 20px;
-            border-radius: 4px;
-            border: solid 1px black;
-        }
-
-        
-
-        #button,
-        #button2 {
-            height: 34px;
-            width: 34px;
-            
-        }
-
-        #button { margin-left: 30%;}
-        #button2 { margin-left: 1%;}
-        
-        #icon {
-            color: #000;
-            
-        }
-
-        #Encabezado {
-            background-color: rgba(128, 128, 128, 0.1);
-        }
-
-        #Piedepagina {
-            
-            background-color: rgba(128, 128, 128, 0.1);
-        }
-
-
-        flex-container {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            justify-content: normal;
-            align-items: normal;
-            align-content: normal;
-        }
-
-        .flex-items:nth-child(1) {
-            display: block;
-            flex-grow: 0;
-            flex-shrink: 1;
-            flex-basis: auto;
-            align-self: auto;
-            order: 0;
-        }
-
-        .flex-items:nth-child(2) {
-        display: block;
-        flex-grow: 0;
-        flex-shrink: 1;
-        flex-basis: auto;
-        align-self: auto;
-        order: 0;
-        }
-
-        .flex-items:nth-child(3) {
-        display: block;
-        flex-grow: 0;
-        flex-shrink: 1;
-        flex-basis: auto;
-        align-self: auto;
-        order: 0;
-        }
-
-        .flex-items:nth-child(4) {
-        display: block;
-        flex-grow: 0;
-        flex-shrink: 1;
-        flex-basis: auto;
-        align-self: auto;
-        order: 0;
-        }
-
-        .flex-items:nth-child(5) {
-        display: block;
-        flex-grow: 0;
-        flex-shrink: 1;
-        flex-basis: auto;
-        align-self: auto;
-        order: 0;
-        }
-
-        .flex-items:nth-child(6) {
-        display: block;
-        flex-grow: 0;
-        flex-shrink: 1;
-        flex-basis: auto;
-        align-self: auto;
-        order: 0;
-        }
-
-        .form-select {
-            width: 80%!important;
-
-            
-        }
-        
-
-
-    </style>
+    
 </head>
-
-<script>
-// Para activar el mensaje arriba del boton 
-$(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-})
-</script>
 
 <body class="container">
 
@@ -326,13 +48,11 @@ $(function () {
     
     <div id="uno--" class="flex-ld-column"> 
 
-        <strong><u><h4 id="parrafo titulo">Para cotizar su corte complete los siguientes pasos:</h4></u></strong>
-        <br>
         
-            <h5 for="tipoMadera">1. Selecione el tipo de madera:</h5><br>
+            <h5 for="tipoMadera">Comienza a cotizar tu corte:</h5>
 
             <select class="form-select" aria-label="Default select example" id="tipoMadera">
-                <option selected value="0">Materiales</option>
+                <option selected value="0">Selecciona el material</option>
                 <option id="FF" value="8830.13" data-image="https://surmaderas.com/cotizador/imagenes/fibrofacil.jpg"  data-description="Madera MDF (fibro fácil) de diferentes espesores, ideal para trabajos de ebanistería y manualidades. Es suave, fácil de cortar y pintar, pero no es resistente a la humedad.">Fibro Fácil 3mm</option>
                 <option id="FF" value="16318.19" data-image="https://surmaderas.com/cotizador/imagenes/fibrofacil.jpg" data-description="Madera MDF (fibro fácil) de diferentes espesores, ideal para trabajos de ebanistería y manualidades. Es suave, fácil de cortar y pintar, pero no es resistente a la humedad.">Fibro Fácil 9 mm</option>
                 <option id="FF" value="11710.78" data-image="https://surmaderas.com/cotizador/imagenes/fibrofacil.jpg" data-description="Madera MDF (fibro fácil) de diferentes espesores, ideal para trabajos de ebanistería y manualidades. Es suave, fácil de cortar y pintar, pero no es resistente a la humedad.">Fibro Fácil 5 mm</option>
@@ -365,14 +85,12 @@ $(function () {
 
         <div id="infoMaterial">
                 <b><h5 id="descripcionM" style="display: none;">Acerca del material:</h5></b>
-                <div id="descripcionMadera" style="display:none;"></div>
+                <div id="descripcionMadera" style="display:none;"> </div>
+                <br>
         </div>
     </div>
 
-    <hr>
     <div id="uno">
-        
-        <strong><h5>2. Ingrese la medida del corte y la cantidad de cortes que nesecite (En caso de usar decimales utilice punto) </h5></strong>
         
         <div class="mb-3">
             <form>
@@ -402,12 +120,12 @@ $(function () {
     
     <div id="Piedepagina">
         <hr>
-        <h2>Costo Total: $<span id="costototalcorte">0.00</span></h2>
+        <h2>Costo total del corte: $<span id="costototalcorte">0.00</span></h2>
         <hr>
         </div>
     <div id="dos">
         
-       
+        
         <p id="costeUnidad" style="display: none;"> (El costo por unidad del corte es $<span id="costounidadalcorte">0.00 </span>)</p>
         <p id="agradecimiento" style="display:none;">¡Gracias por utilizar nuestra calculadora!</p>
         <p id="especificacion" style="display:none;">(En el precio se incluye el material y el corte, el mismo puede llegar a variar sin previo aviso)</p>
@@ -416,7 +134,7 @@ $(function () {
     
     
     <div id="misCortes" style="font-family: arial;" class="flex-container">
-        <img id="logo1" src="https://www.rematesmdq.com/surmaderas/img/logo-linea-gris.png"  >
+        
         <u id="TituloMisCortes"><h3>Mis cortes</h3></u> 
             <div>
                 <div style="display: block;" class="logo" > 
@@ -457,258 +175,6 @@ $(function () {
             <hr>
     </div>
 
-
-
-    
-    <script>
-        $(document).ready(function() {
-            // Actualizar el precio, imagen y descripción cuando se selecciona un tipo de madera
-            $("#tipoMadera").change(function() {
-                var precio = $(this).val();
-                var imagen = $(this).find('option:selected').data('image');
-                var descripcion = $(this).find('option:selected').data('description');
-                
-                // Actualizar el precio en el input correspondiente
-                $("#preciometromadera").val(precio);
-                
-                // Actualizar la imagen y mostrarla
-                if (imagen) {
-                    $("#descripcionM").show();
-                    $("#imagenMadera").attr("src", imagen).show();
-
-                } else {
-                    $("#imagenMadera").hide();
-                    $("#descripcionM").hide();
-                }
-
-                // Actualizar la descripción y mostrarla
-                if (descripcion) {
-                    $("#descripcionMadera").text(descripcion).show();
-                } else {
-                    $("#descripcionMadera").hide();
-                }
-                
-                
-            });
-
-            // Calcular el costo total cuando se hace clic en el botón
-            $("#CALCULAR").click(function() {
-                    // Obtener los valores de los inputs
-                    var largo = parseFloat($("#alto").val());
-                    var ancho = parseFloat($("#ancho").val());
-                    var cantidad = parseFloat($("#cantidad").val());
-                    var precioPorMetro = parseFloat($("#preciometromadera").val());
-                    var tipoMadera = $("#tipoMadera option:selected").text();
-                    var referenciaMinima = ((10 * 10) * precioPorMetro) / 10000; //se usa para poner un minimo de cobro
-                    
-                    // Validar que los valores sean correctos
-                    if (isNaN(largo) || isNaN(ancho) || isNaN(precioPorMetro) || precioPorMetro === 0) {
-                        alert("Por favor, ingrese valores válidos para el largo, ancho y seleccione un tipo de madera.");
-                        return;
-                    }
-                    
-                    // Limpiar los campos después de agregar la fila
-                    $("#alto").val('');
-                    $("#ancho").val('');
-                    $("#cantidad").val('')
-                    $("#costototalcorte").text('0.00');
-
-                    var largoEnMetros = largo / 100;
-                    var anchoEnMetros = ancho / 100;
-
-                    // Calcular el área en metros cuadrados
-                    var area = largoEnMetros * anchoEnMetros;
-
-                    // Calcular el costo total y por unidad de corte
-                    var costoUnidad = area * precioPorMetro
-                    if (costoUnidad < referenciaMinima) {
-                        costoUnidad = referenciaMinima;
-                    }
-                    var costoTotal = (costoUnidad) * cantidad;
-
-                    // Mostrar el costo total en el elemento correspondiente
-                    $("#costototalcorte").text(costoTotal.toFixed(2));
-                    $("#costounidadalcorte").text(costoUnidad.toFixed(2));
-                    $("#costeUnidad").show();
-
-                    // Mostrar mensaje de agradecimiento
-                    $("#agradecimiento").show();
-
-                    $("#especificacion").show();
-
-                    var numFila = 1 ;
-                    var precioPorUnidad = parseFloat($("#costounidadalcorte").text());
-                    var contar = $('.subtotal').length + 1;
-                    var nuevaFila = `
-                    
-                        <tr>
-                            <div class='flex-items'>
-                            <td class='col'> <div class='form-check text-center'><input class='form-check-input row-item' type='checkbox'></div> </td>
-                            <td class='col'>${cantidad}</td>
-                            <td class='col' style="text-align: center;">${tipoMadera}</td>
-                            <td class='col' >${largo} cm x ${ancho} cm</td>
-                            <td class="col text-center" style="text-align: center;" >$ ${precioPorUnidad.toFixed(2)}</td>
-                            <td class="col text-end subtotal">${costoTotal.toFixed(2)}</td>
-                            </div>
-                        </tr>
-                    ` ;
-
-                    // Agregar la fila a la tabla
-                    $("#misCortes tbody").append(nuevaFila) ;
-
-                    //Suma los sub totales y genera el total
-                    // console.log(sum);
-                    // $('#resultado_total').html(sum.toFixed(2));
-
-                    // Row Item Change Event Listener
-
-                    $('tr').find('.row-item').change(function() {
-                        if ($(".row-item").length == $(".row-item:checked").length) {
-                            $('#SelectAll').prop('checked', true)
-                        } else {
-                            $('#SelectAll').prop('checked', false)
-                        }
-                    })
-
-                    sumar();
-
-
-                    
-                })
-
-                // Remove Selected Table Row(s)
-                $('#delete_selected').click(function() {
-                        var count = $('.row-item:checked').length
-                        if (count <= 0) {
-                            alert("Por favor, seleccione una fila para eliminar")
-                        } else {
-                            $('.row-item:checked').closest('tr').remove()
-                        }
-
-                        sumar();
-
-                        var contar = $('.subtotal').length;
-
-                })
-
-                $('#finpedido').click(function() {
-
-                    // Swal.fire({
-                    // position: "top-end",
-                    // icon: "success",
-                    // title: "Sus cortes han sido guardados",
-                    // showConfirmButton: false,
-                    // timer: 2500
-                    // });
-
-                    $(".botones").hide();
-                    $(".logo").css("display","block");
-                    printDiv("misCortes");
-
-                    
-
-
-                    var sum=0;
-                    var contar = $('.subtotal').length;
-                    //alert(contar);
-
-                    $('.subtotal').each(function(){  
-                    sum += parseFloat($(this).text().replace(/,/g, ''), 10); 
-
-                    }); 
-
-                    console.log(sum);
-                    $('#resultado_total').html(sum.toFixed(2));
-
-
-
-
-                    })
-
-                function sumar(){
-                    var sum=0;
-                    // var valor="";
-                    var contar = $('.subtotal').length;
-                    //alert(contar);
-
-                    $('.subtotal').each(function(){  
-                    
-                    // valor =($(this).text()).substring(1);
-                    // valor =valor.replace(/./g, '');
-
-                    // console.log("valor :", valor);
-
-                    sum += parseFloat($(this).text().replace(/,/g, ''), 10); 
-                    // sum += parseFloat(valor, 10); 
-                    
-
-
-                    }); 
-
-                    console.log(sum);
-
-                    $('#resultado_total').html(sum.toFixed(2));
-                }
-
-                function printDiv(nombreDiv) {
-            //alert(nombreDiv);
-                var contenido = document.getElementById(nombreDiv).innerHTML;
-                var contenidoOriginal= document.body.innerHTML;
-                document.body.innerHTML = contenido;
-                
-                window.print();
-                
-                document.body.innerHTML = contenidoOriginal;
-
-
-                $(".botones").show();
-                
-            }
-
-                
-        });
-
-        function generatePDF() {
-
-            $("#TituloMisCortes").css("display","inline");
-
-            $("#misCortes").css("color","black");
-
-            
-
-            $(".botones").hide();
-
-            $("#logo1").show();
-
-
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
-            
-            html2canvas(document.querySelector("#misCortes"), { useCORS: true } ).then(canvas => {
-                const imgData = canvas.toDataURL('image/png');
-                const imgWidth = 190; // Ancho de la imagen en el PDF
-                const pageHeight = 290; // Altura de la página en mm
-                const imgHeight = canvas.height * imgWidth / canvas.width;
-                let heightLeft = imgHeight;
-                let position = 10; // Espacio inicial desde el margen superior
-
-                doc.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
-                heightLeft -= pageHeight;
-
-                while (heightLeft >= 0) {
-                    position = heightLeft - imgHeight;
-                    doc.addPage();
-                    doc.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
-                    heightLeft -= pageHeight;
-                }
-
-                doc.save("mis-cortes.pdf");
-
-                $(".botones").show();
-            });
-        }
-                
-     </script>  
-     
+    <script src="/js/main.js"></script>
     </body>
 </html>
