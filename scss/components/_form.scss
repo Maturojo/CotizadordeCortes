@@ -1,0 +1,9 @@
+@use '../utils/variables' as vars;
+
+.form-control {
+    background-color: vars.$white;
+}
+
+label {
+    color: vars.$primary-color;
+}

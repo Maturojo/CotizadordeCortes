@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["../scss/base/_reset.scss","../scss/components/_header.scss","../scss/utils/_variables.scss","../scss/components/_form.scss"],"names":[],"mappings":"AAEI;EACA;EACA;EACA;;;AAEA;EACA;EACA;;;ACPJ;EACQ;;AAEA;EACA;EACA;EACA;;AAGA;EACA;EACA;EACA;EACA,OCbQ;;ADgBR;EACA;EACA;;;AElBR;EACI,kBDFI;;;ACKR;EACI,ODLY","file":"main.css"}

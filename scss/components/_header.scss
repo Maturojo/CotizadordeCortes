@@ -1,0 +1,24 @@
+@use '../utils/variables' as vars;
+
+#Encabezado {
+        padding: 1rem 0;
+
+        .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        }
+
+        h1 {
+        font-size: 1.8rem;
+        margin: 0;
+        font-family: 'Hind', sans-serif;
+        color: vars.$primary-color;
+        }
+
+        #logo {
+        width: 80px;
+        height: auto;
+        }
+}
+
