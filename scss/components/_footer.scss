@@ -1,0 +1,28 @@
+@use '../utils/variables' as vars;
+
+#Piedepagina {
+    background-color: vars.$primary-color;
+    border-radius: 4px;
+    margin-top: 1rem;
+    text-align: left;
+}
+
+p {
+    color: white;
+    font-weight: 700;
+    padding: 10px;
+}
+
+table {
+    font-size: 0.9rem;
+    width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    margin-top: 1rem;
+
+    th, td {
+        text-align: center;
+        padding: 8px;
+    }
+    }
+

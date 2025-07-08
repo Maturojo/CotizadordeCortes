@@ -1,9 +1,21 @@
 @use '../utils/variables' as vars;
 
+
+select {
+    color: vars.$primary-color;
+}
 .form-control {
     background-color: vars.$white;
+    gap: 2px;
 }
 
 label {
     color: vars.$primary-color;
+    font-weight: 700;
 }
+
+button {
+    background-color: vars.$white;
+    color: vars.$primary-color;
+}
+

@@ -1,82 +1,156 @@
-    @media (max-width: 768px) {
-    body.container {
-        padding: 10px;
+    @media (min-width: 769px) {
+    input,
+    select {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+        max-width: 400px;
     }
 
+    label {
+        font-size: 0.95rem;
+    }
+
+    #Piedepagina {
+        max-width: 400px;
+    }
+    }
+
+    @media (max-width: 768px) {
     #Encabezado {
         text-align: center;
+        padding: 1rem 0;
 
-        img#logoUp {
-        width: 100px;
+        h1 {
+        font-size: 1.6rem;
+        margin-top: 0.5rem;
+        }
+
+        #logo {
+        width: 60px;
         margin: 0 auto;
         display: block;
         }
-
-        h1 {
-        font-size: 1.5rem;
-        }
     }
 
-    select#tipoMadera,
-    input.form-control,
-    button {
-        font-size: 1rem;
-        width: 100%;
+    h5 {
+        font-size: 1.1rem;
+        font-weight: 600;
     }
 
-    #imagenMadera {
+    input,
+    select {
         width: 100%;
-        padding: 0;
+        padding: 10px;
         margin-bottom: 1rem;
+        font-size: 1rem;
+        border-radius: 8px;
     }
 
-    #tabla {
-        font-size: 0.85rem;
+    #CALCULAR {
+        width: 100%;
+        font-weight: 600;
+        padding: 10px;
+        border-radius: 6px;
+        font-size: 1rem;
+    }
+
+    #Piedepagina {
+        background-color: #555;
+        color: white;
+        padding: 1rem;
+        border-radius: 10px;
+        margin-top: 1rem;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    #misCortes {
+        margin-top: 1.5rem;
+    }
+
+    table {
+        width: 100%;
+        font-size: 0.9rem;
+        overflow-x: auto;
+        display: block;
 
         th,
         td {
-        padding: 5px;
+        padding: 6px;
         text-align: center;
-        }
-
-        thead {
-        display: none; // Ocultamos cabecera en móviles si hace falta
-        }
-
-        tbody tr {
-        display: block;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
-        padding: 10px;
-        }
-
-        tbody td {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         }
     }
 
     .botones {
         display: flex;
-        flex-direction: column;
+        justify-content: space-around;
+        flex-wrap: wrap;
         gap: 10px;
+        margin-top: 1rem;
 
         button {
-        width: 100%;
+        flex: 1 1 30%;
+        border-radius: 6px;
+        }
+    }
+    }
+
+    @media (max-width: 480px) {
+    #Encabezado {
+        padding: 0.5rem 0;
+        flex-direction: column;
+        text-align: center;
+
+        h1 {
+        font-size: 1.3rem;
+        margin-top: 0.5rem;
+        }
+
+        #logo {
+        width: 50px;
+        margin: 0 auto;
+        display: block;
         }
     }
 
-    #misCortes {
-        padding: 10px 0;
+    h5 {
+        font-size: 1rem;
+        font-weight: 600;
     }
 
-    #Piedepagina h2 {
-        font-size: 1.2rem;
-        text-align: center;
-    }
-
-    #descripcionMadera {
+    input,
+    select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 0.75rem;
         font-size: 0.95rem;
+        border-radius: 6px;
+    }
+
+    #CALCULAR {
+        width: 100%;
+        padding: 8px;
+        font-size: 0.95rem;
+        border-radius: 6px;
+    }
+
+    #Piedepagina {
+        font-size: 1rem;
+        padding: 0.8rem;
+        border-radius: 8px;
+    }
+
+    table {
+        font-size: 0.75rem;
+    }
+
+    .botones {
+        flex-direction: column;
+        gap: 8px;
+
+        button {
+        width: 100%;
+        padding: 10px;
+        }
     }
     }
