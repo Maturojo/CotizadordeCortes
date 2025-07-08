@@ -18,7 +18,7 @@ body {
   align-items: center;
 }
 #Encabezado h1 {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   margin: 0;
   font-family: "Hind", sans-serif;
   color: #615f5f;
@@ -48,6 +48,13 @@ button {
   color: #615f5f;
 }
 
+.instrucciones {
+  margin-bottom: 3%;
+  font-family: "Hind", sans-serif;
+  color: #615f5f;
+  font-weight: 700;
+}
+
 #Piedepagina {
   background-color: #615f5f;
   border-radius: 4px;
@@ -70,7 +77,48 @@ table {
 }
 table th, table td {
   text-align: center;
+  background-color: #615f5f;
   padding: 8px;
+}
+
+#costeUnidad, #agradecimiento, #especificacion {
+  color: #615f5f;
+}
+
+#imagenMadera {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 8px; /* Opcional, da un toque suave */
+  width: 400px;
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#imagenMadera:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+#infoMaterial {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 8px; /* Opcional, da un toque suave */
+  padding: 15px;
+  margin-bottom: 35px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#infoMaterial:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+h5 {
+  color: #615f5f;
+  font-weight: 700;
+}
+
+#descripcionMadera {
+  color: #615f5f;
+  font-weight: 500;
 }
 
 @media (min-width: 769px) {

@@ -22,7 +22,12 @@ table {
 
     th, td {
         text-align: center;
+        background-color: vars.$primary-color;
         padding: 8px;
     }
+    }
+
+    #costeUnidad,#agradecimiento,#especificacion {
+        color: vars.$primary-color;
     }
 
