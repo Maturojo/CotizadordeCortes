@@ -10,10 +10,14 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   margin: 10px;
   border-radius: 10px;
+  padding-top: 10px;
 }
 
 #Encabezado {
   padding: 1rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px; /* Opcional, da un toque suave */
+  margin-bottom: 2rem;
 }
 #Encabezado .header-content {
   display: flex;
@@ -25,7 +29,13 @@ body {
   margin: 0;
   font-family: "Hind", sans-serif;
   color: #615f5f;
+  margin-left: 10px;
   font-weight: 800;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+#Encabezado h1:hover {
+  transform: scale(1.03);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 #Encabezado #logo {
   width: 80px;
@@ -58,11 +68,19 @@ button {
   font-weight: 700;
 }
 
+#formulario-corte {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 2px;
+  margin-bottom: 20px;
+}
+
 #Piedepagina {
   background-color: #615f5f;
   border-radius: 4px;
   margin-top: 1rem;
   text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 p {
@@ -86,16 +104,9 @@ p {
 
 #whatsapp {
   margin-top: 50px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   padding: 10px;
   margin-bottom: 50px;
   border-radius: 4px;
-}
-
-#whatsapp:hover {
-  transform: scale(1.01);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 #intruccionChat {
@@ -104,16 +115,17 @@ p {
 }
 
 #imagenMadera {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 8px; /* Opcional, da un toque suave */
   width: 400px;
+  margin-left: 20px;
   height: auto;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #imagenMadera:hover {
   transform: scale(1.03);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 #infoMaterial {
@@ -123,9 +135,26 @@ p {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+#info-material {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 2px;
+  margin-bottom: 20px;
+}
+
+select {
+  margin-left: 10px;
+}
+
+#selecc {
+  margin-left: 10px;
+}
+
 h5 {
   color: #615f5f;
   font-weight: 700;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
 #descripcionMadera {
@@ -145,11 +174,73 @@ h5 {
   justify-content: center;
 }
 
+#CALCULAR {
+  background-color: #615f5f;
+  border-color: #615f5f;
+  color: white;
+}
+
+#CALCULAR:hover {
+  border-color: #615f5f;
+  background-color: white;
+  color: #615f5f;
+  transform: scale(1.03);
+}
+
+#delete_selected {
+  background-color: red;
+  border-color: red;
+  color: white;
+  margin-top: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#delete_selected:hover {
+  background-color: white;
+  border-color: red;
+  color: red;
+  transform: scale(1.1);
+}
+
+#finpedido {
+  background-color: blue;
+  border-color: blue;
+  color: white;
+  margin-top: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#finpedido:hover {
+  background-color: white;
+  border-color: blue;
+  color: blue;
+  transform: scale(1.1);
+}
+
+#downloadpdf {
+  background-color: #615f5f;
+  border-color: #615f5f;
+  color: white;
+  margin-top: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#downloadpdf:hover {
+  background-color: white;
+  border-color: #615f5f;
+  color: #615f5f;
+  transform: scale(1.1);
+}
+
 #btnWhatsapp {
   background-color: #25d366;
   border-color: #25d366;
   color: white;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
+  margin-left: 15px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
@@ -164,7 +255,8 @@ h5 {
   background-color: #615f5f;
   border-color: #615f5f;
   color: white;
-  margin-bottom: 200px;
+  margin-bottom: 20px;
+  margin-left: 5px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -175,6 +267,18 @@ h5 {
   transform: scale(1.1);
 }
 
+@media (max-width: 767px) {
+  #btnWhatsapp,
+  #btnCopiar {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    padding: 14px 20px;
+  }
+}
 #tabla {
   width: 100%;
   min-width: 750px;
@@ -345,8 +449,13 @@ h5 {
     width: 100%;
     padding: 8px;
     margin-bottom: 0.75rem;
+    margin-left: -20px;
     font-size: 0.95rem;
     border-radius: 6px;
+    scale: 0.8;
+  }
+  #imagenMadera {
+    scale: 0.8;
   }
   #CALCULAR {
     width: 100%;

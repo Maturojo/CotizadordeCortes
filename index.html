@@ -36,7 +36,7 @@
         <div id="info-material" class="flex-ld-column"> 
 
                 <h5 class="instrucciones">Comienza a cotizar tu corte:</h5>
-                <label for="tipoMadera">1. Selecione el material:</label>
+                <label for="tipoMadera" id="selecc">1. Selecione el material:</label>
 
                 <select class="form-select" aria-label="Default select example" id="tipoMadera">
                     <option id="Seleccion" selected value="0">Selecciona el material</option>
@@ -176,12 +176,13 @@
         <label id="intruccionChat">3. Adjuntar el pdf o pegar los cortes</label>
     </div>
 
-    <button id="btnWhatsapp" title="Enviar por WhatsApp" onclick="enviarWhatsapp()">
-            <i class="fab fa-whatsapp"></i>
-    </button>
+    <div class="botones "></div>
+        <button id="btnWhatsapp" title="Enviar por WhatsApp" onclick="enviarWhatsapp()">
+                <i class="fab fa-whatsapp"></i>
+        </button>
 
-    <button id="btnCopiar" title="Copiar resumen al portapapeles">
-        <i id="iconoCopiar" class="fa-solid fa-copy"></i>
+        <button id="btnCopiar" title="Copiar resumen al portapapeles" class="botones">
+            <i id="iconoCopiar" class="fa-solid fa-copy"></i>
     </button>
 
 

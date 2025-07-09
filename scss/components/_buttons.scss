@@ -12,12 +12,74 @@
     justify-content: center;
     }
 
+    #CALCULAR {
+        background-color: vars.$primary-color; 
+        border-color: vars.$primary-color;
+        color: white;
+    }
+
+    #CALCULAR:hover {
+        border-color: vars.$primary-color;
+            background-color: white;
+            color: vars.$primary-color;
+            transform: scale(1.03);
+    }
+
+    #delete_selected {
+        background-color: red;
+        border-color: red;
+        color: white;
+        margin-top: 20px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    #delete_selected:hover{
+        background-color: white;
+        border-color: red;
+        color: red;
+        transform: scale(1.10);
+    }
+
+    #finpedido {
+        background-color: blue;
+        border-color: blue;
+        color: white;
+        margin-top: 20px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    #finpedido:hover {
+        background-color: white;
+        border-color: blue;
+        color: blue;
+        transform: scale(1.10);
+    }
+
+    #downloadpdf {
+        background-color: vars.$primary-color;
+        border-color: vars.$primary-color;
+        color: white;
+        margin-top: 20px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    #downloadpdf:hover {
+        background-color: white;
+        border-color: vars.$primary-color;
+        color: vars.$primary-color;
+        transform: scale(1.10);
+    }
+
     #btnWhatsapp {
     @extend .btn-icono;
     background-color: #25d366;
     border-color: #25d366;
     color: white;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
+    margin-left: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 
@@ -34,7 +96,8 @@
         background-color: vars.$primary-color; // verde Bootstrap
         border-color: vars.$primary-color;
         color: white;
-        margin-bottom: 200px;
+        margin-bottom: 20px;
+        margin-left: 5px;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
@@ -45,4 +108,21 @@
             transform: scale(1.10);
         }
         }
+
+        // Estilos adaptativos para los botones de abajo (WhatsApp y Copiar)
+    @media (max-width: 767px) {
+    #btnWhatsapp,
+    #btnCopiar {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 0;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        font-size: 1.2rem;
+        padding: 14px 20px;
+    }
+    }
+
+    
+
 

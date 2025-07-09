@@ -279,11 +279,39 @@ $(document).ready(function() {
         }
 
         function enviarWhatsapp() {
-            const telefono = '2234383262'; // reemplazá con tu número
-            const mensaje = encodeURIComponent("¡Hola! Te envío el presupuesto. Adjunto el PDF que generé.");
+            const filas = document.querySelectorAll("#tabla tbody tr");
+            if (filas.length === 0) {
+                alert("No hay cortes cargados para enviar.");
+                return;
+            }
+
+            let mensaje = "📦 *Resumen de cortes*%0A";
+
+            filas.forEach((fila, index) => {
+                const celdas = fila.querySelectorAll("td");
+                const cantidad = celdas[1]?.textContent.trim();
+                const material = celdas[2]?.textContent.trim();
+                const medida = celdas[3]?.textContent.trim();
+                const precio = celdas[5]?.textContent.trim();
+
+                mensaje += `%0A🔹 *Corte ${index + 1}*%0A`;
+                mensaje += `Material: ${material}%0A`;
+                mensaje += `Medida: ${medida}%0A`;
+                mensaje += `Cantidad: ${cantidad}%0A`;
+                mensaje += `Subtotal: $${precio}%0A`;
+            });
+
+            const total = document.getElementById("resultado_total")?.textContent.trim();
+            mensaje += `%0A💰 *Total: $${total}*`;
+
+            const telefono = "2234383262"; // Cambiar por tu número
             const url = `https://wa.me/${telefono}?text=${mensaje}`;
-            window.open(url, '_blank');
+
+            window.open(url, "_blank");
         }
+
+
+
 
     document.getElementById("btnCopiar").addEventListener("click", () => {
         const filas = document.querySelectorAll("#tabla tbody tr");

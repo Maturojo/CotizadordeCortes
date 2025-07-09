@@ -115,6 +115,7 @@
     }
 
     @media (max-width: 480px) {
+    
 
     body {
         margin: 10px;
@@ -146,8 +147,15 @@
         width: 100%;
         padding: 8px;
         margin-bottom: 0.75rem;
+        margin-left: -20px;
         font-size: 0.95rem;
         border-radius: 6px;
+        scale: 0.8;
+    }
+
+    #imagenMadera {
+        
+        scale: 0.8;
     }
 
     #CALCULAR {

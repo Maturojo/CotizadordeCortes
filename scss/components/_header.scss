@@ -3,6 +3,10 @@
 #Encabezado {
         padding: 1rem 0;
 
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 8px; /* Opcional, da un toque suave */
+        margin-bottom: 2rem;
+
         .header-content {
         display: flex;
         justify-content: space-between;
@@ -14,7 +18,14 @@
         margin: 0;
         font-family: 'Hind', sans-serif;
         color: vars.$primary-color;
+        margin-left: 10px;
         font-weight: 800;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.30);
+        }
+
+        h1:hover {
+                transform: scale(1.03);
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.30);
         }
 
         #logo {
