@@ -1,3 +1,4 @@
+    @use '../utils/variables' as vars;
     
     .btn-icono {
     border: 2px solid;
@@ -14,14 +15,34 @@
     #btnWhatsapp {
     @extend .btn-icono;
     background-color: #25d366;
+    border-color: #25d366;
     color: white;
     margin-bottom: 200px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 
     &:hover {
         border-color: #25d366;
         background-color: white;
         color: #25d366;
-        transform: scale(1.25);
+        transform: scale(1.10);
     }
     }
+
+    #btnCopiar {
+        @extend .btn-icono;
+        background-color: vars.$primary-color; // verde Bootstrap
+        border-color: vars.$primary-color;
+        color: white;
+        margin-bottom: 200px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+        &:hover {
+            border-color: vars.$primary-color;
+            background-color: white;
+            color: vars.$primary-color;
+            transform: scale(1.10);
+        }
+        }
+

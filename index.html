@@ -159,7 +159,7 @@
                     <div class="botones ">
                         <button data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-outline-danger" id="delete_selected" type="button"><i style="size: 24px;" class="fa-solid fa-trash"></i></button>
                         <button data-toggle="tooltip" data-placement="top" title="Imprimir" class="btn btn-outline-primary" id="finpedido" type="button" ><i class="fa-solid fa-print"></i> </button>
-                        <button data-toggle="tooltip" data-placement="top" title="Guardar PDF" class="btn btn-outline-secondary" id="downloadpdf" type="button"><i style="size: 24px; " class="fa-solid fa-download" onclick="generatePDF()"> </i></button>
+                        <button data-toggle="tooltip" data-placement="top" title="Guardar PDF" class="btn btn-outline-secondary" id="downloadpdf" type="button"><i style="size: 24px; " class="fa-solid fa-download" onclick="generatePDF()"></i></button>
                         
 
 
@@ -171,14 +171,20 @@
     <div id="whatsapp">
         <h5>Encargue sus cortes por Whatsapp</h5>
         <label id="intruccionChat">Pasos para encargar sus cortes por Whatsapp:</label><br>
-        <label id="intruccionChat">1. Descargar el PDF </label><br>
+        <label id="intruccionChat">1. Descargar el PDF o copiar al portapapeles </label><br>
         <label id="intruccionChat">2. Comunicarse con nosotros con el boton de abajo</label><br>
-        <label id="intruccionChat">3. Adjuntar el pdf</label>
+        <label id="intruccionChat">3. Adjuntar el pdf o pegar los cortes</label>
     </div>
 
     <button id="btnWhatsapp" title="Enviar por WhatsApp" onclick="enviarWhatsapp()">
             <i class="fab fa-whatsapp"></i>
-        </button>
+    </button>
+
+    <button id="btnCopiar" title="Copiar resumen al portapapeles">
+        <i id="iconoCopiar" class="fa-solid fa-copy"></i>
+    </button>
+
+
 
     
 

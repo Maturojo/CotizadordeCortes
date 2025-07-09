@@ -1,5 +1,5 @@
 * {
-  margin: 0;
+  margin: 3px;
   padding: 0;
   box-sizing: border-box;
 }
@@ -7,6 +7,9 @@
 body {
   font-family: "Poppins", sans-serif;
   background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin: 10px;
+  border-radius: 10px;
 }
 
 #Encabezado {
@@ -83,7 +86,7 @@ p {
 
 #whatsapp {
   margin-top: 50px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   padding: 10px;
   margin-bottom: 50px;
@@ -91,8 +94,8 @@ p {
 }
 
 #whatsapp:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transform: scale(1.01);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 #intruccionChat {
@@ -114,16 +117,10 @@ p {
 }
 
 #infoMaterial {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   border-radius: 8px; /* Opcional, da un toque suave */
   padding: 15px;
   margin-bottom: 35px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#infoMaterial:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 h5 {
@@ -136,7 +133,7 @@ h5 {
   font-weight: 500;
 }
 
-.btn-icono, #btnWhatsapp {
+.btn-icono, #btnCopiar, #btnWhatsapp {
   border: 2px solid;
   border-radius: 10px;
   padding: 8px 12px;
@@ -150,15 +147,32 @@ h5 {
 
 #btnWhatsapp {
   background-color: #25d366;
+  border-color: #25d366;
   color: white;
   margin-bottom: 200px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 #btnWhatsapp:hover {
   border-color: #25d366;
   background-color: white;
   color: #25d366;
-  transform: scale(1.25);
+  transform: scale(1.1);
+}
+
+#btnCopiar {
+  background-color: #615f5f;
+  border-color: #615f5f;
+  color: white;
+  margin-bottom: 200px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+#btnCopiar:hover {
+  border-color: #615f5f;
+  background-color: white;
+  color: #615f5f;
+  transform: scale(1.1);
 }
 
 #tabla {
@@ -305,6 +319,9 @@ h5 {
   }
 }
 @media (max-width: 480px) {
+  body {
+    margin: 10px;
+  }
   #Encabezado {
     padding: 0.5rem 0;
     flex-direction: column;
