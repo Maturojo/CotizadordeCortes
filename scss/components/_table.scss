@@ -1,0 +1,50 @@
+    #tabla {
+    width: 100%;
+    min-width: 750px;
+    table-layout: fixed;
+    border-collapse: collapse;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    th, td {
+        text-align: center;
+        padding: 12px 10px;
+        white-space: nowrap;
+    }
+
+    thead th {
+        background-color: #615f5f;
+        color: white;
+        font-weight: 700;
+    }
+
+    tbody tr:hover {
+        background-color: #f8f9fa;
+    }
+
+    tfoot th {
+        font-weight: 600;
+        background-color: #f1f1f1;
+        text-align: right;
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .text-danger {
+        color: #dc3545;
+    }
+    }
+
+    .tabla-scroll {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    background-color: white;
+    margin-top: 1rem;
+    }

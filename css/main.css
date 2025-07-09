@@ -68,21 +68,36 @@ p {
   padding: 10px;
 }
 
-table {
-  font-size: 0.9rem;
-  width: 100%;
-  overflow-x: auto;
-  border-collapse: collapse;
-  margin-top: 1rem;
-}
-table th, table td {
-  text-align: center;
-  background-color: #615f5f;
-  padding: 8px;
+#costeUnidad,
+#agradecimiento,
+#especificacion {
+  color: #615f5f;
 }
 
-#costeUnidad, #agradecimiento, #especificacion {
+#TituloMisCortes {
   color: #615f5f;
+  font-weight: 600;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+
+#whatsapp {
+  margin-top: 50px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 10px;
+  margin-bottom: 50px;
+  border-radius: 4px;
+}
+
+#whatsapp:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+#intruccionChat {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 #imagenMadera {
@@ -121,6 +136,77 @@ h5 {
   font-weight: 500;
 }
 
+.btn-icono, #btnWhatsapp {
+  border: 2px solid;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 1.2rem;
+  background-color: white;
+  transition: all 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#btnWhatsapp {
+  background-color: #25d366;
+  color: white;
+  margin-bottom: 200px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#btnWhatsapp:hover {
+  border-color: #25d366;
+  background-color: white;
+  color: #25d366;
+  transform: scale(1.25);
+}
+
+#tabla {
+  width: 100%;
+  min-width: 750px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+#tabla th, #tabla td {
+  text-align: center;
+  padding: 12px 10px;
+  white-space: nowrap;
+}
+#tabla thead th {
+  background-color: #615f5f;
+  color: white;
+  font-weight: 700;
+}
+#tabla tbody tr:hover {
+  background-color: #f8f9fa;
+}
+#tabla tfoot th {
+  font-weight: 600;
+  background-color: #f1f1f1;
+  text-align: right;
+  padding: 10px;
+  font-size: 1rem;
+}
+#tabla .text-danger {
+  color: #dc3545;
+}
+
+.tabla-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  background-color: white;
+  margin-top: 1rem;
+}
+
 @media (min-width: 769px) {
   input,
   select {
@@ -133,6 +219,10 @@ h5 {
   }
   #Piedepagina {
     max-width: 400px;
+  }
+  #tabla tbody tr:hover {
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   }
 }
 @media (max-width: 768px) {
@@ -180,16 +270,27 @@ h5 {
   #misCortes {
     margin-top: 1.5rem;
   }
-  table {
-    width: 100%;
-    font-size: 0.9rem;
+  .tabla-scroll {
     overflow-x: auto;
-    display: block;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    margin-top: 1rem;
   }
-  table th,
-  table td {
-    padding: 6px;
+  #tabla {
+    min-width: 600px;
+    font-size: 0.85rem;
+    border-collapse: collapse;
+  }
+  #tabla thead {
+    display: table-header-group;
+  }
+  #tabla td,
+  #tabla th {
+    white-space: nowrap;
     text-align: center;
+    padding: 10px;
   }
   .botones {
     display: flex;
@@ -241,8 +342,25 @@ h5 {
     padding: 0.8rem;
     border-radius: 8px;
   }
-  table {
-    font-size: 0.75rem;
+  #tabla {
+    font-size: 0.8rem;
+    table-layout: auto;
+    min-width: 900px;
+  }
+  .tabla-scroll {
+    border-radius: 4px;
+  }
+  #TituloMisCortes h3 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  p {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+  .tabla-pdf {
+    overflow: visible !important;
+    max-width: none !important;
   }
   .botones {
     flex-direction: column;

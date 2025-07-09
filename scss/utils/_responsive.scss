@@ -13,6 +13,11 @@
     #Piedepagina {
         max-width: 400px;
     }
+
+    #tabla tbody tr:hover {
+        background-color: #f8f9fa;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
     }
 
     @media (max-width: 768px) {
@@ -68,17 +73,31 @@
         margin-top: 1.5rem;
     }
 
-    table {
-        width: 100%;
-        font-size: 0.9rem;
+    // ✅ CORRECTO: tabla con scroll horizontal en vez de card-style
+    .tabla-scroll {
         overflow-x: auto;
-        display: block;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 8px;
+        background-color: #fff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        margin-top: 1rem;
+    }
 
-        th,
-        td {
-        padding: 6px;
+    #tabla {
+        min-width: 600px;
+        font-size: 0.85rem;
+        border-collapse: collapse;
+    }
+
+    #tabla thead {
+        display: table-header-group; // vuelve a mostrarse
+    }
+
+    #tabla td,
+    #tabla th {
+        white-space: nowrap;
         text-align: center;
-        }
+        padding: 10px;
     }
 
     .botones {
@@ -140,9 +159,37 @@
         border-radius: 8px;
     }
 
-    table {
-        font-size: 0.75rem;
+    #tabla {
+        font-size: 0.8rem;
+        table-layout: auto;
+        min-width: 900px;
     }
+
+    .tabla-scroll {
+        border-radius: 4px;
+    }
+
+    #TituloMisCortes h3 {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    p {
+        font-size: 0.85rem;
+        text-align: center;
+    }
+
+        // Forzar tabla completa sin scroll
+        .tabla-pdf {
+            overflow: visible !important;
+            max-width: none !important;
+        }
+
+        .tabla-pdf table {
+            
+        }
+
+
 
     .botones {
         flex-direction: column;

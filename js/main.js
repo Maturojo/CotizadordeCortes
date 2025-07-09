@@ -193,61 +193,98 @@ $(document).ready(function() {
                 }
 
                 function printDiv(nombreDiv) {
-            //alert(nombreDiv);
-                var contenido = document.getElementById(nombreDiv).innerHTML;
-                var contenidoOriginal= document.body.innerHTML;
-                document.body.innerHTML = contenido;
-                
-                window.print();
-                
-                document.body.innerHTML = contenidoOriginal;
+                    const divToPrint = document.getElementById(nombreDiv);
+                    
+                    // Clonamos el contenido a imprimir
+                    const contenido = divToPrint.cloneNode(true);
 
+                    // Le sacamos el scroll horizontal y forzamos el ancho completo
+                    contenido.classList.add('tabla-pdf'); // aplicamos clase de impresión sin scroll
 
-                $(".botones").show();
-                
-            }
+                    // Creamos una nueva ventana temporal para imprimir
+                    const ventana = window.open('', '_blank');
+                    ventana.document.write(`
+                        <html>
+                            <head>
+                                <title>Impresión</title>
+                                <style>
+                                    body {
+                                        font-family: 'Poppins', sans-serif;
+                                        padding: 20px;
+                                    }
+
+                                    table {
+                                        border-collapse: collapse;
+                                        width: 100%;
+                                        font-size: 0.9rem;
+                                    }
+
+                                    th, td {
+                                        border: 1px solid #ddd;
+                                        padding: 8px;
+                                        text-align: center;
+                                    }
+
+                                    th {
+                                        background-color: #f2f2f2;
+                                    }
+
+                                    .tabla-pdf {
+                                        overflow: visible !important;
+                                        max-width: none !important;
+                                    }
+
+                                    .tabla-pdf table {
+                                        min-width: 1000px !important;
+                                    }
+                                </style>
+                            </head>
+                            <body>
+                                ${contenido.innerHTML}
+                            </body>
+                        </html>
+                    `);
+                    ventana.document.close();
+                    ventana.focus();
+                    ventana.print();
+                    ventana.close();
+                }
+
 
                 
         });
 
         function generatePDF() {
+            const tablaContainer = document.querySelector('.tabla-scroll');
 
-            $("#TituloMisCortes").css("display","inline");
+            // Clonar la tabla y hacerla visible y sin scroll
+            const tablaClon = tablaContainer.cloneNode(true);
+            tablaClon.classList.add('tabla-pdf');
+            tablaClon.style.position = 'absolute';
+            tablaClon.style.top = '-9999px'; // la escondemos visualmente
+            document.body.appendChild(tablaClon);
 
-            $("#misCortes").css("color","black");
-
-            
-
-            $(".botones").hide();
-
-            $("#logo1").show();
-
-
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
-            
-            html2canvas(document.querySelector("#misCortes"), { useCORS: true } ).then(canvas => {
+            html2canvas(tablaClon).then((canvas) => {
                 const imgData = canvas.toDataURL('image/png');
-                const imgWidth = 190; // Ancho de la imagen en el PDF
-                const pageHeight = 290; // Altura de la página en mm
-                const imgHeight = canvas.height * imgWidth / canvas.width;
-                let heightLeft = imgHeight;
-                let position = 10; // Espacio inicial desde el margen superior
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                const imgProps = pdf.getImageProperties(imgData);
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
 
-                doc.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
-                heightLeft -= pageHeight;
+                pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+                pdf.save('cotizacion.pdf');
 
-                while (heightLeft >= 0) {
-                    position = heightLeft - imgHeight;
-                    doc.addPage();
-                    doc.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
-                    heightLeft -= pageHeight;
-                }
-
-                doc.save("mis-cortes.pdf");
-
-                $(".botones").show();
+                document.body.removeChild(tablaClon); // limpiar clon
             });
         }
-                
+
+        function enviarWhatsapp() {
+            const telefono = '2234383262'; // reemplazá con tu número
+            const mensaje = encodeURIComponent("¡Hola! Te envío el presupuesto. Adjunto el PDF que generé.");
+            const url = `https://wa.me/${telefono}?text=${mensaje}`;
+            window.open(url, '_blank');
+        }
+
+
+                            
     

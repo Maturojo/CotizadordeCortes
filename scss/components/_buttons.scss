@@ -1,0 +1,27 @@
+    
+    .btn-icono {
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 1.2rem;
+    background-color: white;
+    transition: all 0.2s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+    #btnWhatsapp {
+    @extend .btn-icono;
+    background-color: #25d366;
+    color: white;
+    margin-bottom: 200px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        border-color: #25d366;
+        background-color: white;
+        color: #25d366;
+        transform: scale(1.25);
+    }
+    }

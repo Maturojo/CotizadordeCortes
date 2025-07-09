@@ -1,33 +1,54 @@
-@use '../utils/variables' as vars;
+    @use '../utils/variables' as vars;
 
-#Piedepagina {
+    #Piedepagina {
     background-color: vars.$primary-color;
     border-radius: 4px;
     margin-top: 1rem;
     text-align: left;
-}
+    }
 
-p {
+    p {
     color: white;
     font-weight: 700;
     padding: 10px;
-}
-
-table {
-    font-size: 0.9rem;
-    width: 100%;
-    overflow-x: auto;
-    border-collapse: collapse;
-    margin-top: 1rem;
-
-    th, td {
-        text-align: center;
-        background-color: vars.$primary-color;
-        padding: 8px;
-    }
     }
 
-    #costeUnidad,#agradecimiento,#especificacion {
-        color: vars.$primary-color;
+    #costeUnidad,
+    #agradecimiento,
+    #especificacion {
+    color: vars.$primary-color;
     }
 
+
+    #TituloMisCortes  {
+    color: vars.$primary-color;
+    font-weight: 600;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    
+    }
+
+    #whatsapp {
+        margin-top: 50px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        padding: 10px;
+        margin-bottom: 50px;
+        border-radius: 4px;
+        
+    }
+
+    #whatsapp:hover {
+        transform: scale(1.03);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    #intruccionChat {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    
+    // Ajustes para celulares
+    
+    
