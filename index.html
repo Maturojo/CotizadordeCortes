@@ -13,6 +13,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#1976d2">
+
     
     <!-- links para exportar a PDF -->
     <!-- <script src="jspdf.debug.js"></script> -->
@@ -21,7 +24,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <!-- links fontawesome ICONOS  -->
-    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    
 </head>
 <body class="container">
 
@@ -157,38 +160,53 @@
     </div>
 
                     <div class="botones ">
-                        <button data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-outline-danger" id="delete_selected" type="button"><i style="size: 24px;" class="fa-solid fa-trash"></i></button>
+                        <button data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-outline-danger" id="delete_selected" type="button"><i  class="fa-solid fa-trash"></i></button>
                         <button data-toggle="tooltip" data-placement="top" title="Imprimir" class="btn btn-outline-primary" id="finpedido" type="button" ><i class="fa-solid fa-print"></i> </button>
-                        <button data-toggle="tooltip" data-placement="top" title="Guardar PDF" class="btn btn-outline-secondary" id="downloadpdf" type="button"><i style="size: 24px; " class="fa-solid fa-download" onclick="generatePDF()"></i></button>
-                        
-
-
+                        <button data-toggle="tooltip" data-placement="top" title="Guardar PDF" class="btn btn-outline-secondary" id="downloadpdf" type="button"><i  class="fa-solid fa-download" onclick="generatePDF()"></i></button>
+                        <button data-toggle="tooltip" data-placement="top" title="Enviar por WhatsApp" class="btn btn-outline-secondary" id="btnWhatsapp" type="button"><i class="fab fa-whatsapp" onclick="enviarWhatsapp()"></i></button>
                     </div>
+
             </div>
+
+            <button id="installBtn">Instalar Cotizador</button>
+
+<script>
+        let deferredPrompt;
+        const installBtn = document.getElementById('installBtn');
+        installBtn.style.display = 'none';
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installBtn.style.display = 'block';
+
+            installBtn.addEventListener('click', () => {
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then(() => {
+                installBtn.style.display = 'none';
+                deferredPrompt = null;
+            });
+            });
+        });
+    </script>
+
             
     </div>
 
-    <div id="whatsapp">
-        <h5>Encargue sus cortes por Whatsapp</h5>
-        <label id="intruccionChat">Pasos para encargar sus cortes por Whatsapp:</label><br>
-        <label id="intruccionChat">1. Descargar el PDF o copiar al portapapeles </label><br>
-        <label id="intruccionChat">2. Comunicarse con nosotros con el boton de abajo</label><br>
-        <label id="intruccionChat">3. Adjuntar el pdf o pegar los cortes</label>
-    </div>
-
-    <div class="botones "></div>
-        <button id="btnWhatsapp" title="Enviar por WhatsApp" onclick="enviarWhatsapp()">
-                <i class="fab fa-whatsapp"></i>
-        </button>
-
-        <button id="btnCopiar" title="Copiar resumen al portapapeles" class="botones">
-            <i id="iconoCopiar" class="fa-solid fa-copy"></i>
-    </button>
+    
 
 
 
     
 
     <script src="./js/main.js" defer></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('SW registrado'))
+        .catch(error => console.log('SW falló:', error));
+    }
+    </script>
+
     </body>
 </html>

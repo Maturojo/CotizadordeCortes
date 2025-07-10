@@ -313,44 +313,4 @@ $(document).ready(function() {
 
 
 
-    document.getElementById("btnCopiar").addEventListener("click", () => {
-        const filas = document.querySelectorAll("#tabla tbody tr");
-        if (filas.length === 0) {
-            alert("No hay cortes cargados para copiar.");
-            return;
-        }
-
-        let resumen = "🪵 *Resumen de cortes*\n";
-
-        filas.forEach((fila, index) => {
-            const celdas = fila.querySelectorAll("td");
-            const cantidad = celdas[1]?.textContent.trim();
-            const material = celdas[2]?.textContent.trim();
-            const medida = celdas[3]?.textContent.trim();
-            const precio = celdas[5]?.textContent.trim();
-
-            resumen += `\n🔹 Corte ${index + 1}\n`;
-            resumen += `Material: ${material}\n`;
-            resumen += `Medida: ${medida}\n`;
-            resumen += `Cantidad: ${cantidad}\n`;
-            resumen += `Subtotal: $${precio}\n`;
-        });
-
-        const total = document.getElementById("resultado_total")?.textContent.trim();
-        resumen += `\n💰 *Total: $${total}*`;
-
-        // Copiar al portapapeles
-        navigator.clipboard.writeText(resumen).then(() => {
-            // Cambiar icono a check
-            const icono = document.getElementById("iconoCopiar");
-            const iconoOriginal = icono.className;
-            icono.className = "fa-solid fa-check";
-
-            // Restaurar ícono después de 2 segundos
-            setTimeout(() => {
-            icono.className = iconoOriginal;
-            }, 2000);
-        }).catch(err => {
-            console.error("Error al copiar", err);
-        });
-        });
+    

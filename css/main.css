@@ -11,13 +11,15 @@ body {
   margin: 10px;
   border-radius: 10px;
   padding-top: 10px;
+  padding-bottom: 20px;
 }
 
 #Encabezado {
   padding: 1rem 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 8px; /* Opcional, da un toque suave */
-  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 2px;
+  margin-bottom: 20px;
 }
 #Encabezado .header-content {
   display: flex;
@@ -27,6 +29,7 @@ body {
 #Encabezado h1 {
   font-size: 1.9rem;
   margin: 0;
+  text-align: center;
   font-family: "Hind", sans-serif;
   color: #615f5f;
   margin-left: 10px;
@@ -54,11 +57,6 @@ select {
 label {
   color: #615f5f;
   font-weight: 700;
-}
-
-button {
-  background-color: #f5f5f5;
-  color: #615f5f;
 }
 
 .instrucciones {
@@ -100,13 +98,6 @@ p {
   font-weight: 600;
   margin-top: 2rem;
   font-size: 1.5rem;
-}
-
-#whatsapp {
-  margin-top: 50px;
-  padding: 10px;
-  margin-bottom: 50px;
-  border-radius: 4px;
 }
 
 #intruccionChat {
@@ -160,18 +151,6 @@ h5 {
 #descripcionMadera {
   color: #615f5f;
   font-weight: 500;
-}
-
-.btn-icono, #btnCopiar, #btnWhatsapp {
-  border: 2px solid;
-  border-radius: 10px;
-  padding: 8px 12px;
-  font-size: 1.2rem;
-  background-color: white;
-  transition: all 0.2s ease-in-out;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 }
 
 #CALCULAR {
@@ -239,8 +218,8 @@ h5 {
   background-color: #25d366;
   border-color: #25d366;
   color: white;
-  margin-bottom: 100px;
-  margin-left: 15px;
+  margin-top: 20px;
+  font-size: 1.2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
@@ -251,34 +230,31 @@ h5 {
   transform: scale(1.1);
 }
 
-#btnCopiar {
-  background-color: #615f5f;
-  border-color: #615f5f;
-  color: white;
-  margin-bottom: 20px;
-  margin-left: 5px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.botones {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 2rem auto;
+  margin-left: 10px;
 }
-#btnCopiar:hover {
-  border-color: #615f5f;
-  background-color: white;
-  color: #615f5f;
-  transform: scale(1.1);
+.botones button {
+  width: 40px;
+  height: 40px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+.botones button:hover {
+  transform: scale(1.05);
 }
 
-@media (max-width: 767px) {
-  #btnWhatsapp,
-  #btnCopiar {
-    width: 100%;
-    margin-left: 0;
-    margin-top: 0;
-    margin-bottom: 20px;
-    border-radius: 12px;
-    font-size: 1.2rem;
-    padding: 14px 20px;
-  }
-}
 #tabla {
   width: 100%;
   min-width: 750px;
