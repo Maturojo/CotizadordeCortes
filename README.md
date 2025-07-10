@@ -11,12 +11,14 @@ Este proyecto es una aplicación web desarrollada para facilitar la cotización 
 - Agregado de múltiples cortes a una tabla de "Mis cortes".
 - Cálculo del total acumulado.
 - Opciones para eliminar cortes, imprimir o descargar el presupuesto en PDF.
+- Envio de cotizacion de cortes por Whatsapp
+  
 
 ## 🛠 Tecnologías utilizadas
 
 - **Frontend:**
   - HTML5
-  - CSS3
+  - SASS
   - Bootstrap 5.3.3
   - jQuery 3.6.0
   - Font Awesome
@@ -28,7 +30,7 @@ Este proyecto es una aplicación web desarrollada para facilitar la cotización 
 - Separar el listado de precios en un archivo externo.
 - Mejorar la exportación a PDF.
 - Guardar cortes en LocalStorage o base de datos.
-- Adaptación total a dispositivos móviles.
+
 
 
 
