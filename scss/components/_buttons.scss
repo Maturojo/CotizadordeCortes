@@ -108,6 +108,36 @@
             }
             }
 
+            #installBtn {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color: vars.$primary-color; // verde tipo WhatsApp
+                color: white;
+                border: none;
+                padding: 12px 20px;
+                font-size: 1rem;
+                font-weight: bold;
+                border-radius: 12px;
+                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+                z-index: 1000;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                display: none;
+
+                i {
+                    margin-right: 8px;
+                }
+
+                &:hover {
+                    background-color: white;
+                    color: vars.$primary-color;
+                    border: 2px solid vars.$primary-color;
+                    transform: scale(1.05);
+                }
+            }
+
+
 
 
 
